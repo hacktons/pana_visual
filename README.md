@@ -6,12 +6,12 @@ Preview the health and quality of a Dart/Flutter package before publish.
 
 ## How to use
 
-### Evaluate project
+### 0x1 Evaluate project
 
 Use [pana](https://pub.dev/packages/pana) to evaluate your Dart/Flutter project before push to pub.dev;
 ```dart
 pana --scores --source path $project_path >app.json
-``` 
+```
 >You should already installed pana on local machine; If not, execute the script below: 
 ```dart
 pub global activate pana
@@ -24,10 +24,16 @@ pub global activate pana
 pana --scores --source path ./ >app.json
 ```
 
-### Upload the result 
+### 0x2 Upload the result 
 We've host `pana visual` to [https://pana.codemagic.app](https://pana.codemagic.app)
 
-### Review & Fix issues
+### 0x3 Review & Fix issues
 Review the report, then fix all suggestions and errors;
 
 ![](doc/sample.png)
+
+## License
+This project is open source under [license](LICENSE).
+
+> The flare animation is designed by [@anwar907](https://rive.app/a/anwar907) under [CC 4.0 license](https://creativecommons.org/licenses/by/4.0/)
+
