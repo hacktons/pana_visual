@@ -1,0 +1,826 @@
+{
+ "runtimeInfo": {
+  "panaVersion": "0.13.3",
+  "sdkVersion": "2.7.0",
+  "flutterVersions": {
+   "frameworkVersion": "1.12.13+hotfix.5",
+   "channel": "unknown",
+   "repositoryUrl": "unknown source",
+   "frameworkRevision": "27321ebbad34b0a3fafe99fac037102196d655ff",
+   "frameworkCommitDate": "2019-12-10 18:15:01 -0800",
+   "engineRevision": "2994f7e1e682039464cb25e31a78b86a3c59b695",
+   "dartSdkVersion": "2.7.0"
+  }
+ },
+ "packageName": "pana_visual",
+ "packageVersion": "0.0.1",
+ "pubspec": {
+  "name": "pana_visual",
+  "description": "Preview the health and quality of a Dart/Flutter package before publish..",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hacktons/pana_visual",
+  "environment": {
+   "sdk": ">=2.6.0 <3.0.0"
+  },
+  "dependencies": {
+   "flutter": {
+    "sdk": "flutter"
+   },
+   "cupertino_icons": "^0.1.2",
+   "flare_flutter": "^2.0.1",
+   "provider": "^4.0.3"
+  },
+  "dev_dependencies": {
+   "flutter_test": {
+    "sdk": "flutter"
+   },
+   "pedantic": "^1.8.0"
+  },
+  "flutter": {
+   "uses-material-design": true,
+   "assets": [
+    "assets/"
+   ]
+  }
+ },
+ "platform": {
+  "reason": "References Flutter, but has conflicting libraries: `package:pana_visual/component/copyright.dart` (components: `flutter`, `html`, `io`, `isolate`), `package:pana_visual/component/description.dart` (components: `flutter`, `html`, `io`, `isolate`) and 5 more.."
+ },
+ "licenses": [
+  {
+   "path": "LICENSE",
+   "name": "Apache",
+   "version": "2.0",
+   "url": "https://github.com/hacktons/pana_visual/blob/master/LICENSE"
+  }
+ ],
+ "health": {
+  "analyzeProcessFailed": false,
+  "formatProcessFailed": false,
+  "resolveProcessFailed": false,
+  "analyzerErrorCount": 0,
+  "analyzerWarningCount": 0,
+  "analyzerHintCount": 13,
+  "platformConflictCount": 0,
+  "suggestions": [
+   {
+    "code": "dartanalyzer.warning",
+    "level": "hint",
+    "title": "Fix `lib/component/analysis.dart`.",
+    "description": "Analysis of `lib/component/analysis.dart` reported 4 hints:\n\nline 30 col 63: Avoid using braces in interpolation when not needed.\n\nline 30 col 72: Avoid using braces in interpolation when not needed.\n\nline 54 col 63: Avoid using braces in interpolation when not needed.\n\nline 54 col 72: Avoid using braces in interpolation when not needed.",
+    "file": "lib/component/analysis.dart",
+    "score": 1.99
+   },
+   {
+    "code": "dartanalyzer.warning",
+    "level": "hint",
+    "title": "Fix `lib/component/health.dart`.",
+    "description": "Analysis of `lib/component/health.dart` reported 2 hints:\n\nline 33 col 69: Avoid using braces in interpolation when not needed.\n\nline 33 col 78: Avoid using braces in interpolation when not needed.",
+    "file": "lib/component/health.dart",
+    "score": 1.0
+   },
+   {
+    "code": "dartanalyzer.warning",
+    "level": "hint",
+    "title": "Fix `lib/component/maintenance.dart`.",
+    "description": "Analysis of `lib/component/maintenance.dart` reported 2 hints:\n\nline 22 col 59: Avoid using braces in interpolation when not needed.\n\nline 22 col 68: Avoid using braces in interpolation when not needed.",
+    "file": "lib/component/maintenance.dart",
+    "score": 1.0
+   },
+   {
+    "code": "bulk",
+    "level": "hint",
+    "title": "Fix additional 4 files with analysis or formatting issues.",
+    "description": "Additional issues in the following files:\n\n- `lib/home.dart` (2 hints)\n- `lib/main.dart` (2 hints)\n- `lib/splash.dart` (1 hint)\n- `lib/component/source.dart` (Run `flutter format` to format `lib/component/source.dart`.)\n",
+    "score": 2.5
+   }
+  ]
+ },
+ "maintenance": {
+  "missingChangelog": false,
+  "missingExample": true,
+  "missingReadme": false,
+  "missingAnalysisOptions": false,
+  "oldAnalysisOptions": false,
+  "strongModeEnabled": true,
+  "isExperimentalVersion": true,
+  "isPreReleaseVersion": false,
+  "suggestions": [
+   {
+    "code": "example.missing",
+    "level": "hint",
+    "title": "Maintain an example.",
+    "description": "Create a short demo in the `example/` directory to show how to use this package.\n\nCommon filename patterns include `main.dart`, `example.dart`, and `pana_visual.dart`. Packages with multiple examples should provide `example/README.md`.\n\nFor more information see the [pub package layout conventions](https://www.dartlang.org/tools/pub/package-layout#examples).",
+    "score": 10.0
+   },
+   {
+    "code": "packageVersion.preV01",
+    "level": "hint",
+    "title": "Package is pre-v0.1 release.",
+    "description": "While nothing is inherently wrong with versions of `0.0.*`, it might mean that the author is still experimenting with the general direction of the API.",
+    "score": 10.0
+   }
+  ]
+ },
+ "pkgResolution": {
+  "dependencies": [
+   {
+    "package": "collection",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.14.11",
+    "available": "1.14.12"
+   },
+   {
+    "package": "cupertino_icons",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^0.1.2",
+    "resolved": "0.1.3"
+   },
+   {
+    "package": "flare_dart",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "2.3.3"
+   },
+   {
+    "package": "flare_flutter",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^2.0.1",
+    "resolved": "2.0.1"
+   },
+   {
+    "package": "flutter",
+    "dependencyType": "direct",
+    "constraintType": "sdk",
+    "resolved": "0.0.0"
+   },
+   {
+    "package": "flutter_test",
+    "dependencyType": "dev",
+    "constraintType": "sdk"
+   },
+   {
+    "package": "meta",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.8"
+   },
+   {
+    "package": "nested",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.0.4"
+   },
+   {
+    "package": "pedantic",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.8.0"
+   },
+   {
+    "package": "provider",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^4.0.3",
+    "resolved": "4.0.3"
+   },
+   {
+    "package": "sky_engine",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.0.99"
+   },
+   {
+    "package": "typed_data",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.6"
+   },
+   {
+    "package": "vector_math",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "2.0.8"
+   }
+  ]
+ },
+ "dartFiles": {
+  "lib/component/analysis.dart": {
+   "uri": "package:pana_visual/component/analysis.dart",
+   "size": 2162,
+   "isFormatted": true,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/analysis.dart",
+     "line": 30,
+     "col": 63,
+     "description": "Avoid using braces in interpolation when not needed."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/analysis.dart",
+     "line": 30,
+     "col": 72,
+     "description": "Avoid using braces in interpolation when not needed."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/analysis.dart",
+     "line": 54,
+     "col": 63,
+     "description": "Avoid using braces in interpolation when not needed."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/analysis.dart",
+     "line": 54,
+     "col": 72,
+     "description": "Avoid using braces in interpolation when not needed."
+    }
+   ],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/bean.dart": {
+   "uri": "package:pana_visual/component/bean.dart",
+   "size": 1122,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [],
+   "platform": {
+    "components": [],
+    "uses": {
+     "flutter": "allowed",
+     "web": "allowed",
+     "other": "allowed"
+    }
+   }
+  },
+  "lib/component/copyright.dart": {
+   "uri": "package:pana_visual/component/copyright.dart",
+   "size": 678,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:html",
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/widget/extension.dart",
+    "package:pana_visual/component/widget/html_extensiton.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "html",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "conflict",
+     "web": "conflict",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/description.dart": {
+   "uri": "package:pana_visual/component/description.dart",
+   "size": 3801,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:html",
+    "package:flutter/cupertino.dart",
+    "package:flutter/gestures.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart",
+    "package:pana_visual/component/widget/extension.dart",
+    "package:pana_visual/component/widget/html_extensiton.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "html",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "conflict",
+     "web": "conflict",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/health.dart": {
+   "uri": "package:pana_visual/component/health.dart",
+   "size": 2077,
+   "isFormatted": false,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/health.dart",
+     "line": 33,
+     "col": 69,
+     "description": "Avoid using braces in interpolation when not needed."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/health.dart",
+     "line": 33,
+     "col": 78,
+     "description": "Avoid using braces in interpolation when not needed."
+    }
+   ],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/maintenance.dart": {
+   "uri": "package:pana_visual/component/maintenance.dart",
+   "size": 762,
+   "isFormatted": true,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/maintenance.dart",
+     "line": 22,
+     "col": 59,
+     "description": "Avoid using braces in interpolation when not needed."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "unnecessary_brace_in_string_interps",
+     "file": "lib/component/maintenance.dart",
+     "line": 22,
+     "col": 68,
+     "description": "Avoid using braces in interpolation when not needed."
+    }
+   ],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/problem.dart": {
+   "uri": "package:pana_visual/component/problem.dart",
+   "size": 763,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:pana_visual/component/bean.dart",
+    "package:pana_visual/component/widget/badge.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/runtime.dart": {
+   "uri": "package:pana_visual/component/runtime.dart",
+   "size": 877,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/score.dart": {
+   "uri": "package:pana_visual/component/score.dart",
+   "size": 1096,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/source.dart": {
+   "uri": "package:pana_visual/component/source.dart",
+   "size": 2630,
+   "isFormatted": false,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart",
+    "package:pana_visual/component/problem.dart",
+    "package:pana_visual/component/widget/badge.dart",
+    "package:pana_visual/component/widget/extension.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/suggestion.dart": {
+   "uri": "package:pana_visual/component/suggestion.dart",
+   "size": 1630,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/bean.dart",
+    "package:pana_visual/component/widget/badge.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/widget/badge.dart": {
+   "uri": "package:pana_visual/component/widget/badge.dart",
+   "size": 754,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/widget/extension.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/widget/extension.dart": {
+   "uri": "package:pana_visual/component/widget/extension.dart",
+   "size": 3157,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/component/widget/file_picker.dart": {
+   "uri": "package:pana_visual/component/widget/file_picker.dart",
+   "size": 590,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:html"
+   ],
+   "platform": {
+    "components": [
+     "html"
+    ],
+    "uses": {
+     "flutter": "forbidden",
+     "web": "used",
+     "other": "forbidden"
+    }
+   }
+  },
+  "lib/component/widget/html_extensiton.dart": {
+   "uri": "package:pana_visual/component/widget/html_extensiton.dart",
+   "size": 367,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:html",
+    "package:flutter/cupertino.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "html",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "conflict",
+     "web": "conflict",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/home.dart": {
+   "uri": "package:pana_visual/home.dart",
+   "size": 6360,
+   "isFormatted": true,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "HINT",
+     "errorCode": "DEAD_CODE",
+     "file": "lib/home.dart",
+     "line": 156,
+     "col": 11,
+     "description": "Dead code."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "empty_statements",
+     "file": "lib/home.dart",
+     "line": 156,
+     "col": 11,
+     "description": "Avoid empty statements."
+    }
+   ],
+   "directLibs": [
+    "dart:convert",
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:pana_visual/component/analysis.dart",
+    "package:pana_visual/component/copyright.dart",
+    "package:pana_visual/component/description.dart",
+    "package:pana_visual/component/runtime.dart",
+    "package:pana_visual/component/score.dart",
+    "package:pana_visual/component/source.dart",
+    "package:pana_visual/component/suggestion.dart",
+    "package:pana_visual/component/widget/file_picker.dart",
+    "package:pana_visual/provider/constant.dart",
+    "package:pana_visual/provider/pana.dart",
+    "package:provider/provider.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "html",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "conflict",
+     "web": "conflict",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/main.dart": {
+   "uri": "package:pana_visual/main.dart",
+   "size": 738,
+   "isFormatted": false,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "HINT",
+     "errorCode": "DEAD_CODE",
+     "file": "lib/main.dart",
+     "line": 30,
+     "col": 5,
+     "description": "Dead code."
+    },
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "empty_statements",
+     "file": "lib/main.dart",
+     "line": 30,
+     "col": 5,
+     "description": "Avoid empty statements."
+    }
+   ],
+   "directLibs": [
+    "package:flutter/material.dart",
+    "package:pana_visual/home.dart",
+    "package:pana_visual/provider/pana.dart",
+    "package:pana_visual/splash.dart",
+    "package:provider/provider.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "html",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "conflict",
+     "web": "conflict",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/provider/constant.dart": {
+   "uri": "package:pana_visual/provider/constant.dart",
+   "size": 251,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:pana_visual/component/bean.dart"
+   ],
+   "platform": {
+    "components": [],
+    "uses": {
+     "flutter": "allowed",
+     "web": "allowed",
+     "other": "allowed"
+    }
+   }
+  },
+  "lib/provider/pana.dart": {
+   "uri": "package:pana_visual/provider/pana.dart",
+   "size": 4516,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:convert",
+    "package:flutter/cupertino.dart",
+    "package:flutter/services.dart",
+    "package:pana_visual/component/bean.dart",
+    "package:pana_visual/component/widget/extension.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/splash.dart": {
+   "uri": "package:pana_visual/splash.dart",
+   "size": 3570,
+   "isFormatted": true,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "HINT",
+     "errorCode": "UNUSED_FIELD",
+     "file": "lib/splash.dart",
+     "line": 20,
+     "col": 10,
+     "description": "The value of the field '_task' isn't used."
+    }
+   ],
+   "directLibs": [
+    "dart:convert",
+    "package:flare_flutter/flare_actor.dart",
+    "package:flare_flutter/provider/asset_flare.dart",
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:flutter/services.dart",
+    "package:pana_visual/component/widget/file_picker.dart",
+    "package:pana_visual/provider/pana.dart",
+    "package:provider/provider.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "html",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "conflict",
+     "web": "conflict",
+     "other": "conflict"
+    }
+   }
+  }
+ },
+ "stats": {
+  "analyzeProcessElapsed": 10628,
+  "formatProcessElapsed": 1182,
+  "resolveProcessElapsed": 7644,
+  "totalElapsed": 37054
+ },
+ "tags": [
+  "sdk:flutter",
+  "platform:web"
+ ],
+ "scores": {
+  "health": 93.51,
+  "maintenance": 80.0
+ }
+}
