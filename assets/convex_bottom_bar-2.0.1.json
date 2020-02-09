@@ -61,18 +61,8 @@
   "resolveProcessFailed": false,
   "analyzerErrorCount": 0,
   "analyzerWarningCount": 0,
-  "analyzerHintCount": 1,
-  "platformConflictCount": 0,
-  "suggestions": [
-   {
-    "code": "dartanalyzer.warning",
-    "level": "hint",
-    "title": "Fix `lib/src/bar.dart`.",
-    "description": "Analysis of `lib/src/bar.dart` reported 1 hint:\n\nline 29 col 5: Name non-constant identifiers using lowerCamelCase.",
-    "file": "lib/src/bar.dart",
-    "score": 0.5
-   }
-  ]
+  "analyzerHintCount": 0,
+  "platformConflictCount": 0
  },
  "maintenance": {
   "missingChangelog": false,
@@ -155,19 +145,9 @@
   },
   "lib/src/bar.dart": {
    "uri": "package:convex_bottom_bar/src/bar.dart",
-   "size": 11700,
-   "isFormatted": false,
-   "codeProblems": [
-    {
-     "severity": "INFO",
-     "errorType": "LINT",
-     "errorCode": "non_constant_identifier_names",
-     "file": "lib/src/bar.dart",
-     "line": 29,
-     "col": 5,
-     "description": "Name non-constant identifiers using lowerCamelCase."
-    }
-   ]
+   "size": 11690,
+   "isFormatted": true,
+   "codeProblems": []
   },
   "lib/src/chip_builder.dart": {
    "uri": "package:convex_bottom_bar/src/chip_builder.dart",
@@ -267,10 +247,10 @@
   }
  },
  "stats": {
-  "analyzeProcessElapsed": 8422,
-  "formatProcessElapsed": 1053,
-  "resolveProcessElapsed": 3313,
-  "totalElapsed": 26842
+  "analyzeProcessElapsed": 8540,
+  "formatProcessElapsed": 1087,
+  "resolveProcessElapsed": 2499,
+  "totalElapsed": 26055
  },
  "tags": [
   "sdk:flutter",
@@ -282,7 +262,7 @@
   "platform:web"
  ],
  "scores": {
-  "health": 99.5,
+  "health": 100.0,
   "maintenance": 100.0
  }
 }

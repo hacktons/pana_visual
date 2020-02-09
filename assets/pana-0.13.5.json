@@ -1,0 +1,719 @@
+{
+ "runtimeInfo": {
+  "panaVersion": "0.13.3",
+  "sdkVersion": "2.7.0",
+  "flutterVersions": {
+   "frameworkVersion": "1.12.13+hotfix.5",
+   "channel": "unknown",
+   "repositoryUrl": "unknown source",
+   "frameworkRevision": "27321ebbad34b0a3fafe99fac037102196d655ff",
+   "frameworkCommitDate": "2019-12-10 18:15:01 -0800",
+   "engineRevision": "2994f7e1e682039464cb25e31a78b86a3c59b695",
+   "dartSdkVersion": "2.7.0"
+  }
+ },
+ "packageName": "pana",
+ "packageVersion": "0.13.5",
+ "pubspec": {
+  "name": "pana",
+  "description": "Evaluate the health and quality of a Dart package",
+  "version": "0.13.5",
+  "homepage": "https://github.com/dart-lang/pana",
+  "environment": {
+   "sdk": ">=2.3.0 <3.0.0"
+  },
+  "dependencies": {
+   "analyzer": "^0.39.0",
+   "args": ">=0.13.7 <2.0.0",
+   "async": ">=1.13.3 <3.0.0",
+   "cli_util": "^0.1.3",
+   "collection": "^1.14.12",
+   "html": ">=0.13.3 <0.15.0",
+   "http": ">=0.11.3 <0.13.0",
+   "io": "^0.3.3",
+   "json_annotation": ">=2.0.0 <4.0.0",
+   "logging": "^0.11.3+1",
+   "markdown": "^2.0.2",
+   "meta": "^1.1.7",
+   "package_config": ">=0.1.5 <2.0.0",
+   "path": "^1.6.2",
+   "pedantic": "^1.4.0",
+   "pool": "^1.3.6",
+   "pub_semver": "^1.4.2",
+   "pubspec_parse": "^0.1.4",
+   "quiver": ">=0.24.0 <3.0.0",
+   "resource": "^2.1.5",
+   "yaml": "^2.1.15",
+   "safe_url_check": "^1.0.0"
+  },
+  "dev_dependencies": {
+   "build": "^1.1.0",
+   "build_config": "^0.4.0",
+   "build_runner": "^1.1.3",
+   "build_verify": "^1.1.1",
+   "build_version": "^2.0.0",
+   "json_serializable": "^3.2.0",
+   "source_gen": "^0.9.0",
+   "test": "^1.5.2",
+   "test_descriptor": "^1.1.1",
+   "test_process": "^1.0.4"
+  },
+  "executables": {
+   "pana": null
+  }
+ },
+ "platform": {
+  "components": [
+   "io",
+   "isolate"
+  ],
+  "uses": {
+   "flutter": "allowed",
+   "web": "forbidden",
+   "other": "used"
+  },
+  "reason": "Primary library: `package:pana/pana.dart` with components: `io`, `isolate`."
+ },
+ "licenses": [
+  {
+   "path": "LICENSE",
+   "name": "BSD",
+   "url": "https://github.com/dart-lang/pana/blob/master/LICENSE"
+  }
+ ],
+ "health": {
+  "analyzeProcessFailed": false,
+  "formatProcessFailed": false,
+  "resolveProcessFailed": false,
+  "analyzerErrorCount": 0,
+  "analyzerWarningCount": 0,
+  "analyzerHintCount": 0,
+  "platformConflictCount": 0
+ },
+ "maintenance": {
+  "missingChangelog": false,
+  "missingExample": true,
+  "missingReadme": false,
+  "missingAnalysisOptions": false,
+  "oldAnalysisOptions": false,
+  "strongModeEnabled": true,
+  "isExperimentalVersion": false,
+  "isPreReleaseVersion": false,
+  "suggestions": [
+   {
+    "code": "pubspec.dependencies.outdated",
+    "level": "warning",
+    "title": "Support latest dependencies.",
+    "description": "The version constraint in `pubspec.yaml` does not support the latest published versions for 1 dependency (`package_config`).",
+    "score": 10.0
+   },
+   {
+    "code": "pubspec.description.tooShort",
+    "level": "hint",
+    "title": "The package description is too short.",
+    "description": "Add more detail to the `description` field of `pubspec.yaml`. Use 60 to 180 characters to describe the package, what it does, and its target use case.",
+    "score": 11.0
+   },
+   {
+    "code": "example.missing",
+    "level": "hint",
+    "title": "Maintain an example.",
+    "description": "Create a short demo in the `example/` directory to show how to use this package.\n\nCommon filename patterns include `main.dart`, `example.dart`, and `pana.dart`. Packages with multiple examples should provide `example/README.md`.\n\nFor more information see the [pub package layout conventions](https://www.dartlang.org/tools/pub/package-layout#examples).",
+    "score": 10.0
+   }
+  ]
+ },
+ "pkgResolution": {
+  "dependencies": [
+   {
+    "package": "_fe_analyzer_shared",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.0.3"
+   },
+   {
+    "package": "analyzer",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^0.39.0",
+    "resolved": "0.39.4"
+   },
+   {
+    "package": "args",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=0.13.7 <2.0.0",
+    "resolved": "1.5.2"
+   },
+   {
+    "package": "async",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=1.13.3 <3.0.0",
+    "resolved": "2.4.0"
+   },
+   {
+    "package": "build",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.1.0"
+   },
+   {
+    "package": "build_config",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^0.4.0"
+   },
+   {
+    "package": "build_runner",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.1.3"
+   },
+   {
+    "package": "build_verify",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.1.1"
+   },
+   {
+    "package": "build_version",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^2.0.0"
+   },
+   {
+    "package": "charcode",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.2"
+   },
+   {
+    "package": "checked_yaml",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.0.2"
+   },
+   {
+    "package": "cli_util",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^0.1.3",
+    "resolved": "0.1.3+2"
+   },
+   {
+    "package": "collection",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.14.12",
+    "resolved": "1.14.12"
+   },
+   {
+    "package": "convert",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "2.1.1"
+   },
+   {
+    "package": "crypto",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "2.1.4"
+   },
+   {
+    "package": "csslib",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.16.1"
+   },
+   {
+    "package": "glob",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.2.0"
+   },
+   {
+    "package": "html",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=0.13.3 <0.15.0",
+    "resolved": "0.14.0+3"
+   },
+   {
+    "package": "http",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=0.11.3 <0.13.0",
+    "resolved": "0.12.0+4"
+   },
+   {
+    "package": "http_parser",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "3.1.3"
+   },
+   {
+    "package": "io",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^0.3.3",
+    "resolved": "0.3.3"
+   },
+   {
+    "package": "js",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.6.1+1"
+   },
+   {
+    "package": "json_annotation",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=2.0.0 <4.0.0",
+    "resolved": "3.0.1"
+   },
+   {
+    "package": "json_serializable",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^3.2.0"
+   },
+   {
+    "package": "logging",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^0.11.3+1",
+    "resolved": "0.11.4"
+   },
+   {
+    "package": "markdown",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^2.0.2",
+    "resolved": "2.1.3"
+   },
+   {
+    "package": "matcher",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.12.6"
+   },
+   {
+    "package": "meta",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.1.7",
+    "resolved": "1.1.8"
+   },
+   {
+    "package": "node_interop",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.0.3"
+   },
+   {
+    "package": "node_io",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.0.1+2"
+   },
+   {
+    "package": "package_config",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=0.1.5 <2.0.0",
+    "resolved": "1.1.0",
+    "available": "2.0.0"
+   },
+   {
+    "package": "path",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.6.2",
+    "resolved": "1.6.4"
+   },
+   {
+    "package": "pedantic",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.4.0",
+    "resolved": "1.9.0"
+   },
+   {
+    "package": "pool",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.3.6",
+    "resolved": "1.4.0"
+   },
+   {
+    "package": "pub_semver",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.4.2",
+    "resolved": "1.4.2"
+   },
+   {
+    "package": "pubspec_parse",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^0.1.4",
+    "resolved": "0.1.5"
+   },
+   {
+    "package": "quiver",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": ">=0.24.0 <3.0.0",
+    "resolved": "2.1.2+1"
+   },
+   {
+    "package": "resource",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^2.1.5",
+    "resolved": "2.1.6"
+   },
+   {
+    "package": "retry",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "3.0.0+1"
+   },
+   {
+    "package": "safe_url_check",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^1.0.0",
+    "resolved": "1.0.0"
+   },
+   {
+    "package": "source_gen",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^0.9.0"
+   },
+   {
+    "package": "source_span",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.6.0"
+   },
+   {
+    "package": "stack_trace",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.9.3"
+   },
+   {
+    "package": "string_scanner",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.0.5"
+   },
+   {
+    "package": "term_glyph",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.0"
+   },
+   {
+    "package": "test",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.5.2"
+   },
+   {
+    "package": "test_descriptor",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.1.1"
+   },
+   {
+    "package": "test_process",
+    "dependencyType": "dev",
+    "constraintType": "normal",
+    "constraint": "^1.0.4"
+   },
+   {
+    "package": "typed_data",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.6"
+   },
+   {
+    "package": "watcher",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.9.7+13"
+   },
+   {
+    "package": "yaml",
+    "dependencyType": "direct",
+    "constraintType": "normal",
+    "constraint": "^2.1.15",
+    "resolved": "2.2.0"
+   }
+  ]
+ },
+ "dartFiles": {
+  "bin/bulk.dart": {
+   "uri": "asset:pana/bin/bulk.dart",
+   "size": 9242,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:async",
+    "dart:convert",
+    "dart:io",
+    "package:args/command_runner.dart",
+    "package:pana/pana.dart",
+    "package:pool/pool.dart"
+   ],
+   "platform": {
+    "components": [],
+    "uses": {
+     "flutter": "allowed",
+     "web": "allowed",
+     "other": "allowed"
+    }
+   }
+  },
+  "bin/pana.dart": {
+   "uri": "asset:pana/bin/pana.dart",
+   "size": 6975,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "dart:async",
+    "dart:convert",
+    "dart:io",
+    "dart:math",
+    "package:args/args.dart",
+    "package:io/ansi.dart",
+    "package:io/io.dart",
+    "package:logging/logging.dart",
+    "package:pana/pana.dart"
+   ],
+   "platform": {
+    "components": [],
+    "uses": {
+     "flutter": "allowed",
+     "web": "allowed",
+     "other": "allowed"
+    }
+   }
+  },
+  "lib/models.dart": {
+   "uri": "package:pana/models.dart",
+   "size": 25,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:pana/src/model.dart"
+   ],
+   "platform": {
+    "components": [
+     "io"
+    ],
+    "uses": {
+     "flutter": "allowed",
+     "web": "forbidden",
+     "other": "used"
+    }
+   }
+  },
+  "lib/pana.dart": {
+   "uri": "package:pana/pana.dart",
+   "size": 632,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:pana/src/code_problem.dart",
+    "package:pana/src/dartdoc_analyzer.dart",
+    "package:pana/src/download_utils.dart",
+    "package:pana/src/health.dart",
+    "package:pana/src/license.dart",
+    "package:pana/src/maintenance.dart",
+    "package:pana/src/model.dart",
+    "package:pana/src/package_analyzer.dart",
+    "package:pana/src/pkg_resolution.dart",
+    "package:pana/src/platform.dart",
+    "package:pana/src/pubspec.dart",
+    "package:pana/src/sdk_env.dart",
+    "package:pana/src/utils.dart",
+    "package:pana/src/version.dart"
+   ],
+   "platform": {
+    "components": [
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "allowed",
+     "web": "forbidden",
+     "other": "used"
+    }
+   }
+  },
+  "lib/src/analysis_options.dart": {
+   "uri": "package:pana/src/analysis_options.dart",
+   "size": 4128,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/code_problem.dart": {
+   "uri": "package:pana/src/code_problem.dart",
+   "size": 2148,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/dartdoc_analyzer.dart": {
+   "uri": "package:pana/src/dartdoc_analyzer.dart",
+   "size": 950,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/download_utils.dart": {
+   "uri": "package:pana/src/download_utils.dart",
+   "size": 5644,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/health.dart": {
+   "uri": "package:pana/src/health.dart",
+   "size": 5790,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/json_converters.dart": {
+   "uri": "package:pana/src/json_converters.dart",
+   "size": 900,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/library_scanner.dart": {
+   "uri": "package:pana/src/library_scanner.dart",
+   "size": 8444,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/license.dart": {
+   "uri": "package:pana/src/license.dart",
+   "size": 6589,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/logging.dart": {
+   "uri": "package:pana/src/logging.dart",
+   "size": 527,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/maintenance.dart": {
+   "uri": "package:pana/src/maintenance.dart",
+   "size": 21381,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/markdown_content.dart": {
+   "uri": "package:pana/src/markdown_content.dart",
+   "size": 4104,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/messages.dart": {
+   "uri": "package:pana/src/messages.dart",
+   "size": 2841,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/mini_sum.dart": {
+   "uri": "package:pana/src/mini_sum.dart",
+   "size": 4248,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/model.dart": {
+   "uri": "package:pana/src/model.dart",
+   "size": 31106,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/model.g.dart": {
+   "uri": "package:pana/src/model.g.dart",
+   "size": 13622,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/package_analyzer.dart": {
+   "uri": "package:pana/src/package_analyzer.dart",
+   "size": 16321,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/pkg_resolution.dart": {
+   "uri": "package:pana/src/pkg_resolution.dart",
+   "size": 7224,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/platform.dart": {
+   "uri": "package:pana/src/platform.dart",
+   "size": 8679,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/pubspec.dart": {
+   "uri": "package:pana/src/pubspec.dart",
+   "size": 4699,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/sdk_env.dart": {
+   "uri": "package:pana/src/sdk_env.dart",
+   "size": 16331,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/tag_detection.dart": {
+   "uri": "package:pana/src/tag_detection.dart",
+   "size": 22230,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/utils.dart": {
+   "uri": "package:pana/src/utils.dart",
+   "size": 9164,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/version.dart": {
+   "uri": "package:pana/src/version.dart",
+   "size": 67,
+   "isFormatted": true,
+   "codeProblems": []
+  }
+ },
+ "stats": {
+  "analyzeProcessElapsed": 8741,
+  "formatProcessElapsed": 1343,
+  "resolveProcessElapsed": 13556,
+  "totalElapsed": 44486
+ },
+ "tags": [
+  "sdk:dart",
+  "sdk:flutter",
+  "platform:android",
+  "platform:ios",
+  "platform:windows",
+  "platform:linux",
+  "platform:macos",
+  "runtime:native-aot",
+  "runtime:native-jit"
+ ],
+ "scores": {
+  "health": 100.0,
+  "maintenance": 69.0
+ }
+}

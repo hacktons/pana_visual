@@ -1,7 +1,7 @@
-name: pana_web
-description: Visualize the output of pana. Used for dart developer to preview the score before publish.
+name: pana_visual
+description: Preview the health and quality of a Dart/Flutter package before publish.
 version: 0.0.1
-
+homepage: https://github.com/hacktons/pana_visual
 environment:
   sdk: ">=2.6.0 <3.0.0"
 
@@ -14,7 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  pedantic: ^1.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -23,8 +23,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/pana.json
-    - assets/coding.flr
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

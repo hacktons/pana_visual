@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pana_web/component/widget/extension.dart';
+import 'package:pana_visual/component/widget/extension.dart';
 
 void main() {
   test("Extension test Color.rgb ", () {

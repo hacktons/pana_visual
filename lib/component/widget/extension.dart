@@ -24,6 +24,17 @@ extension LinkExtension on String {
     );
   }
 
+  TextSpan linkSpan({TextStyle style, double fontSize}) {
+    return TextSpan(
+        text: this,
+        style: TextStyle(
+          decoration: TextDecoration.underline,
+          decorationColor: Colors.blue,
+          color: Colors.blue,
+          fontSize: fontSize,
+        ));
+  }
+
   String get capitalize => this[0].toUpperCase() + this.substring(1);
 }
 

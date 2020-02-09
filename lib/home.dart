@@ -5,15 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'component/analysis.dart';
-import 'component/bean.dart';
 import 'component/copyright.dart';
 import 'component/description.dart';
 import 'component/runtime.dart';
 import 'component/score.dart';
 import 'component/source.dart';
 import 'component/suggestion.dart';
-import 'component/widget/extension.dart';
 import 'component/widget/file_picker.dart';
+import 'provider/constant.dart';
 import 'provider/pana.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,21 +33,33 @@ class _State extends State<HomePage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.file_upload),
-            padding: EdgeInsets.only(right: 16),
             tooltip: 'Upload pana result(json required).',
             onPressed: () {
               FilePicker.pickFile().then((file) {
                 return file.text;
               }).then((json) {
                 var data = jsonDecode(json);
-                Provider.of<PanaDataProvider>(context, listen: false)
-                    .setData(data);
+                Provider.of<DataProvider>(context, listen: false).setData(data);
               });
             },
-          )
+          ),
+          PopupMenuButton(
+            icon: Icon(Icons.list),
+            tooltip: 'Choose sample data.',
+            onSelected: (result) {
+              Provider.of<DataProvider>(context, listen: false)
+                  .loadData(file: result);
+            },
+            itemBuilder: (_) => sampleJson
+                .map((pair) => PopupMenuItem(
+                      value: pair.first,
+                      child: Text(pair.second),
+                    ))
+                .toList(growable: false),
+          ),
         ],
       ),
-      body: Consumer<PanaDataProvider>(
+      body: Consumer<DataProvider>(
         builder: (ctx, provider, child) {
           var json = provider.data;
           if (json == null) {
@@ -58,100 +69,55 @@ class _State extends State<HomePage> {
             }
             return child;
           }
-          var pubspec = json['pubspec'];
-          var time = json['stats']['totalElapsed'] as num;
-          var timeSeconds = '';
-          if (time >= 1000) {
-            timeSeconds = '${time / 1000.0} ms';
-          } else {
-            timeSeconds = '$time ms';
-          }
-          var info = [
-            Pair('Name', pubspec['name'] + ' • ' + pubspec['version']),
-            Pair('Elapsed time', timeSeconds),
-            Pair('Description', pubspec['description'] ?? ''),
-            Pair('Homepage', pubspec['homepage'] ?? ''),
-          ];
-
-          var tags = (json['tags'] as List)
-              .map((t) => t.toString())
-              .toList(growable: false);
-          var runtimeInfo = json['runtimeInfo'];
-          var flutter = runtimeInfo['flutterVersions'];
-
-          var runtime = [
-            Pair('Pana', runtimeInfo['panaVersion']),
-            Pair(
-                'SDK',
-                flutter == null
-                    ? 'Dart ${runtimeInfo['sdkVersion']}'
-                    : 'Dart ${runtimeInfo['sdkVersion']} • Flutter ${flutter['frameworkVersion']} • Channel ${flutter['channel']}'),
-          ];
-
-          var scores = (json['scores'] as Map)
-              .entries
-              .toList(growable: false)
-              .map((entry) =>
-                  Pair(entry.key.toString().capitalize, entry.value.toString()))
-              .toList(growable: false);
-          var h = json['health'];
-          var health = [
-            Choice(h['analyzeProcessFailed'] as bool, 'analysis'),
-            Choice(h['formatProcessFailed'] as bool, 'format'),
-            Choice(h['resolveProcessFailed'] as bool, 'resolve'),
-          ];
-          var errors = [
-            Triple('error', h['analyzerErrorCount'].toString(), 'red'),
-            Triple('warning', h['analyzerWarningCount'].toString(), 'yellow'),
-            Triple('hint', h['analyzerHintCount'].toString(), 'orange'),
-            Triple('conflit', h['platformConflictCount'].toString(), 'red'),
-          ];
-          var dartFiles = (json['dartFiles'] as Map)
-              .entries
-              .toList(growable: false)
-              .map((f) {
-            return ExpandableDetailData(
-              f.key,
-              isFormatted: f.value['isFormatted'] as bool,
-              size: f.value['size'],
-              codeProblems: f.value['codeProblems'] != null
-                  ? (f.value['codeProblems'] as List).map((p) {
-                      return Problem(
-                        severity: p['severity'],
-                        errorType: p['errorType'],
-                        errorCode: p['errorCode'],
-                        line: p['line'],
-                        col: p['col'],
-                        description: p['description'],
-                      );
-                    }).toList(growable: false)
-                  : null,
-            );
-          }).toList(growable: false);
-          var m = json['maintenance'] as Map;
-          var maintenance = m.entries
-              .toList(growable: false)
-              .where((e) => e.value is bool)
-              .map((e) => Choice(e.value as bool, e.key))
-              .toList(growable: false);
-
-          var hs = h['suggestions'];
-          var ms = m['suggestions'];
-          var ss = [];
-          if (hs != null) {
-            ss.addAll(hs as List);
-          }
-          if (ms != null) {
-            ss.addAll(ms as List);
-          }
-          var suggestions = ss.isNotEmpty
-              ? ss.map((s) {
-                  return ExpandableData(s['title'],
-                      detail: s['description'],
-                      score: s['score'].toString(),
-                      level: s['level']);
-                }).toList(growable: false)
-              : null;
+//          var pubspec = json['pubspec'];
+//          var time = json['stats']['totalElapsed'] as num;
+//          var timeSeconds = '';
+//          if (time >= 1000) {
+//            timeSeconds = '${time / 1000.0} ms';
+//          } else {
+//            timeSeconds = '$time ms';
+//          }
+//          var info = [
+//            Pair('Name', pubspec['name'] + ' • ' + pubspec['version']),
+//            Pair('Elapsed time', timeSeconds),
+//            Pair('Description', pubspec['description'] ?? ''),
+//            Pair('Homepage', pubspec['homepage'] ?? ''),
+//          ];
+//
+//          var tags = (json['tags'] as List)
+//              .map((t) => t.toString())
+//              .toList(growable: false);
+//          var runtimeInfo = json['runtimeInfo'];
+//          var flutter = runtimeInfo['flutterVersions'];
+//
+//          var runtime = [
+//            Pair('Pana', runtimeInfo['panaVersion']),
+//            Pair(
+//                'SDK',
+//                flutter == null
+//                    ? 'Dart ${runtimeInfo['sdkVersion']}'
+//                    : 'Dart ${runtimeInfo['sdkVersion']} • Flutter ${flutter['frameworkVersion']} • Channel ${flutter['channel']}'),
+//          ];
+//
+//          var scores = (json['scores'] as Map)
+//              .entries
+//              .toList(growable: false)
+//              .map((entry) =>
+//                  Pair(entry.key.toString().capitalize, entry.value.toString()))
+//              .toList(growable: false);
+//          var h = json['health'];
+//          var health = [
+//            Choice(h['analyzeProcessFailed'] as bool, 'analysis'),
+//            Choice(h['formatProcessFailed'] as bool, 'format'),
+//            Choice(h['resolveProcessFailed'] as bool, 'resolve'),
+//          ];
+//          var errors = [
+//            Triple('error', h['analyzerErrorCount'].toString(), 'red'),
+//            Triple('warning', h['analyzerWarningCount'].toString(), 'yellow'),
+//            Triple('hint', h['analyzerHintCount'].toString(), 'orange'),
+//            Triple('conflit', h['platformConflictCount'].toString(), 'red'),
+//          ];
+          var report = provider.data1;
 
           return ListView(
             padding: EdgeInsets.only(top: 8, left: 8, right: 8),
@@ -159,26 +125,32 @@ class _State extends State<HomePage> {
               Table(
                 children: [
                   TableRow(children: [
-                    _Card(title: 'Runtime', child: RuntimeItem(items: runtime)),
-                    _Card(title: 'Score', child: ScoreItem(items: scores)),
+                    _Card(
+                        title: 'Runtime',
+                        child: RuntimeItem(items: report.runtime)),
+                    _Card(
+                        title: 'Score', child: ScoreItem(items: report.scores)),
                   ]),
                 ],
               ),
               _Card(
                 title: 'Package',
-                child: DescriptionItem(items: info, tags: tags),
+                child: DescriptionItem(items: report.info, tags: report.tags),
               ),
               _Card(
                   title: 'Analysis',
                   child: AnalysisItem(
-                      process: health, errors: errors, items: maintenance)),
+                      process: report.health,
+                      errors: report.errors,
+                      items: report.maintenance)),
               _Card(
                   title: 'Suggestion',
-                  child: suggestions != null
-                      ? SuggestionItem(items: suggestions)
+                  child: report.suggestions != null
+                      ? SuggestionItem(items: report.suggestions)
                       : Text('No suggestion')),
               _Card(
-                  title: 'Dart Files', child: SourceFileItem(items: dartFiles)),
+                  title: 'Dart Files',
+                  child: SourceFileItem(items: report.dartFiles)),
             ],
           );
           ;
