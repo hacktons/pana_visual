@@ -1,0 +1,288 @@
+{
+ "runtimeInfo": {
+  "panaVersion": "0.13.3",
+  "sdkVersion": "2.7.0",
+  "flutterVersions": {
+   "frameworkVersion": "1.12.13+hotfix.5",
+   "channel": "unknown",
+   "repositoryUrl": "unknown source",
+   "frameworkRevision": "27321ebbad34b0a3fafe99fac037102196d655ff",
+   "frameworkCommitDate": "2019-12-10 18:15:01 -0800",
+   "engineRevision": "2994f7e1e682039464cb25e31a78b86a3c59b695",
+   "dartSdkVersion": "2.7.0"
+  }
+ },
+ "packageName": "convex_bottom_bar",
+ "packageVersion": "2.0.1",
+ "pubspec": {
+  "name": "convex_bottom_bar",
+  "description": "A Flutter package which implements a ConvexAppBar to show a convex tab in the bottom bar. Theming supported.",
+  "version": "2.0.1",
+  "homepage": "https://github.com/hacktons/convex_bottom_bar",
+  "environment": {
+   "sdk": ">=2.1.0 <3.0.0"
+  },
+  "dependencies": {
+   "flutter": {
+    "sdk": "flutter"
+   }
+  },
+  "dev_dependencies": {
+   "flutter_test": {
+    "sdk": "flutter"
+   }
+  },
+  "flutter": null
+ },
+ "platform": {
+  "components": [
+   "flutter",
+   "io",
+   "isolate"
+  ],
+  "uses": {
+   "flutter": "used",
+   "web": "forbidden",
+   "other": "conflict"
+  },
+  "reason": "References Flutter, and has no conflicting libraries."
+ },
+ "licenses": [
+  {
+   "path": "LICENSE",
+   "name": "Apache",
+   "version": "2.0",
+   "url": "https://github.com/hacktons/convex_bottom_bar/blob/master/LICENSE"
+  }
+ ],
+ "health": {
+  "analyzeProcessFailed": false,
+  "formatProcessFailed": false,
+  "resolveProcessFailed": false,
+  "analyzerErrorCount": 0,
+  "analyzerWarningCount": 0,
+  "analyzerHintCount": 1,
+  "platformConflictCount": 0,
+  "suggestions": [
+   {
+    "code": "dartanalyzer.warning",
+    "level": "hint",
+    "title": "Fix `lib/src/bar.dart`.",
+    "description": "Analysis of `lib/src/bar.dart` reported 1 hint:\n\nline 29 col 5: Name non-constant identifiers using lowerCamelCase.",
+    "file": "lib/src/bar.dart",
+    "score": 0.5
+   }
+  ]
+ },
+ "maintenance": {
+  "missingChangelog": false,
+  "missingExample": false,
+  "missingReadme": false,
+  "missingAnalysisOptions": true,
+  "oldAnalysisOptions": false,
+  "strongModeEnabled": true,
+  "isExperimentalVersion": false,
+  "isPreReleaseVersion": false
+ },
+ "pkgResolution": {
+  "dependencies": [
+   {
+    "package": "collection",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.14.11",
+    "available": "1.14.12"
+   },
+   {
+    "package": "flutter",
+    "dependencyType": "direct",
+    "constraintType": "sdk",
+    "resolved": "0.0.0"
+   },
+   {
+    "package": "flutter_test",
+    "dependencyType": "dev",
+    "constraintType": "sdk"
+   },
+   {
+    "package": "meta",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.8"
+   },
+   {
+    "package": "sky_engine",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "0.0.99"
+   },
+   {
+    "package": "typed_data",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "1.1.6"
+   },
+   {
+    "package": "vector_math",
+    "dependencyType": "transitive",
+    "constraintType": "inherited",
+    "resolved": "2.0.8"
+   }
+  ]
+ },
+ "dartFiles": {
+  "lib/convex_bottom_bar.dart": {
+   "uri": "package:convex_bottom_bar/convex_bottom_bar.dart",
+   "size": 71,
+   "isFormatted": true,
+   "codeProblems": [],
+   "directLibs": [
+    "package:convex_bottom_bar/src/bar.dart",
+    "package:convex_bottom_bar/src/item.dart"
+   ],
+   "platform": {
+    "components": [
+     "flutter",
+     "io",
+     "isolate"
+    ],
+    "uses": {
+     "flutter": "used",
+     "web": "forbidden",
+     "other": "conflict"
+    }
+   }
+  },
+  "lib/src/bar.dart": {
+   "uri": "package:convex_bottom_bar/src/bar.dart",
+   "size": 11700,
+   "isFormatted": false,
+   "codeProblems": [
+    {
+     "severity": "INFO",
+     "errorType": "LINT",
+     "errorCode": "non_constant_identifier_names",
+     "file": "lib/src/bar.dart",
+     "line": 29,
+     "col": 5,
+     "description": "Name non-constant identifiers using lowerCamelCase."
+    }
+   ]
+  },
+  "lib/src/chip_builder.dart": {
+   "uri": "package:convex_bottom_bar/src/chip_builder.dart",
+   "size": 2818,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/convex_shape.dart": {
+   "uri": "package:convex_bottom_bar/src/convex_shape.dart",
+   "size": 2162,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/item.dart": {
+   "uri": "package:convex_bottom_bar/src/item.dart",
+   "size": 617,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/painter.dart": {
+   "uri": "package:convex_bottom_bar/src/painter.dart",
+   "size": 1472,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/reused_gradient.dart": {
+   "uri": "package:convex_bottom_bar/src/reused_gradient.dart",
+   "size": 460,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/blend_image_icon.dart": {
+   "uri": "package:convex_bottom_bar/src/style/blend_image_icon.dart",
+   "size": 1257,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/fixed_circle_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/fixed_circle_tab_style.dart",
+   "size": 1798,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/fixed_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/fixed_tab_style.dart",
+   "size": 1814,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/flip_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/flip_tab_style.dart",
+   "size": 1477,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/react_circle_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/react_circle_tab_style.dart",
+   "size": 1745,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/react_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/react_tab_style.dart",
+   "size": 1540,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/styles.dart": {
+   "uri": "package:convex_bottom_bar/src/style/styles.dart",
+   "size": 2509,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/textin_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/textin_tab_style.dart",
+   "size": 1388,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/titled_tab_style.dart": {
+   "uri": "package:convex_bottom_bar/src/style/titled_tab_style.dart",
+   "size": 2289,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/transition_container.dart": {
+   "uri": "package:convex_bottom_bar/src/style/transition_container.dart",
+   "size": 2481,
+   "isFormatted": true,
+   "codeProblems": []
+  },
+  "lib/src/style/transition_container_builder.dart": {
+   "uri": "package:convex_bottom_bar/src/style/transition_container_builder.dart",
+   "size": 3150,
+   "isFormatted": true,
+   "codeProblems": []
+  }
+ },
+ "stats": {
+  "analyzeProcessElapsed": 8422,
+  "formatProcessElapsed": 1053,
+  "resolveProcessElapsed": 3313,
+  "totalElapsed": 26842
+ },
+ "tags": [
+  "sdk:flutter",
+  "platform:android",
+  "platform:ios",
+  "platform:windows",
+  "platform:linux",
+  "platform:macos",
+  "platform:web"
+ ],
+ "scores": {
+  "health": 99.5,
+  "maintenance": 100.0
+ }
+}
