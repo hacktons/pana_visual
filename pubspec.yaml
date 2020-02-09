@@ -1,5 +1,5 @@
 name: pana_visual
-description: Preview the health and quality of a Dart/Flutter package before publish..
+description: Preview the health and quality of a Dart/Flutter package before publish.
 version: 0.0.1
 homepage: https://github.com/hacktons/pana_visual
 environment:
