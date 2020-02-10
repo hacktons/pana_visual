@@ -17,7 +17,6 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   AssetFlare assetFlare;
-  Future _task;
 
   @override
   Widget build(BuildContext context) {
