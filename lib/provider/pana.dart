@@ -1,28 +1,36 @@
 import 'dart:convert';
+import 'dart:html' as html;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 import '../component/bean.dart';
 import '../component/widget/extension.dart';
+import '../component/widget/html_extensiton.dart';
 
 class DataProvider extends ChangeNotifier {
-  Map<String, dynamic> data;
+  Map<String, dynamic> _jsonData;
+  ReportData _data;
 
-  void loadData({String file = 'assets/pana-0.13.5.json'}) {
-    rootBundle.loadString(file).then((json) {
-      data = jsonDecode(json);
-      notifyListeners();
-    });
-  }
-
-  void setData(Map<String, dynamic> json) {
-    data = json;
+  Future<bool> loadData(
+      {String path = 'assets/pana-0.13.5.json', html.File file}) async {
+    var task = file != null ? file.text : rootBundle.loadString(path);
+    var json = await task;
+    _jsonData = jsonDecode(json);
+    _data = _parse(_jsonData);
     notifyListeners();
+    return true;
   }
 
-  ReportData get data1 {
-    var json = data;
+  bool get hasData {
+    return _jsonData != null;
+  }
+
+  ReportData get data {
+    return _data;
+  }
+
+  ReportData _parse(Map<String, dynamic> json) {
     var pubspec = json['pubspec'];
     var time = json['stats']['totalElapsed'] as num;
     var timeSeconds = '';
