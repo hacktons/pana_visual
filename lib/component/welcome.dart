@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +15,7 @@ class WelcomeItem extends StatefulWidget {
 }
 
 class _State extends State<WelcomeItem> {
+
   @override
   Widget build(BuildContext context) {
     var headlineStyle = Theme.of(context).textTheme.headline;
