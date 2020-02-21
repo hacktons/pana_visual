@@ -23,7 +23,7 @@ Future<void> main(List<String> args) async {
       return;
     }
   }
-  print('analyze project health and maintanience...');
+  print('analyze project health and maintenance...');
   var report = await Process.run('pana', ['--scores', '--source', 'path', '.']);
   var result = report.stdout;
   try {
