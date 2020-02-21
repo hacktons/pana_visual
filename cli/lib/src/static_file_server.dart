@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:http_server/http_server.dart';
 
+/// static file server
 void serve(String root) async {
   var staticFiles = VirtualDirectory(root);
   staticFiles.allowDirectoryListing = true;

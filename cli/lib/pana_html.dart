@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:path/path.dart';
 
 import 'src/static_file_server.dart';
 import 'src/util.dart';
 
+/// generate html report and deploy as local service
 Future<void> main(List<String> args) async {
   print('checking if pana installed...');
   var pubConfigured = await checkCommand('pub', ['version'], 'Pub ');

@@ -1,4 +1,4 @@
-name: pana_html
+name: demo
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
@@ -6,7 +6,8 @@ executables:
   panahtml: main
 
 dependencies:
-  #pana_html: ^0.1.0
+  pana_html:
+    path: ../
 
 dev_dependencies:
   pedantic: ^1.8.0
