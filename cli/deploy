@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+##################################################################
+##
+##  Prepare pana_visual for cli
+##
+##
+##  Author: Chaobin Wu
+##  Email : chaobinwu89@gmail.com
+##
+#################################################################
+die() {
+  echo "$*"
+  exit 1
+}
+echo "build web..."
+cd ../ && flutter pub get && flutter build web --release
+if [ ! $? = 0 ]; then
+  die "build failed"
+fi
+echo "package web resources..."
+cp -rf build/web/assets cli/bin/
+cp -rf build/web/index.html cli/bin/
+cp -rf build/web/main.dart.js cli/bin/
+cd cli/bin && tar cvzf web.tar.gz assets index.html main.dart.js
+rm -rf assets index.html main.dart.js
+echo "Done"

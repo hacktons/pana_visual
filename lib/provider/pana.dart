@@ -13,7 +13,7 @@ class DataProvider extends ChangeNotifier {
   ReportData _data;
 
   Future<bool> loadData(
-      {String path = 'assets/pana-0.13.5.json', html.File file}) async {
+      {String path = 'assets/data.json', html.File file}) async {
     var task = file != null ? file.text : rootBundle.loadString(path);
     var json = await task;
     _jsonData = jsonDecode(json);
