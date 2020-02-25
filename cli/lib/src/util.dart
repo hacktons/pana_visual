@@ -1,7 +1,9 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:archive/archive.dart';
 import 'package:path/path.dart';
+import 'package:resource/resource.dart';
 
 /// check if pana installed
 Future<bool> checkPana(bool pubConfigured) async {
@@ -20,8 +22,14 @@ Future<bool> checkCommand(String cmd, List<String> args, String keyword) async {
 }
 
 /// extract the file.tar.gz file into destination
-void extractTarGzip(String path, String des) {
-  var bytes = File(path).readAsBytesSync();
+void extractTarGzip(String path, String des) async {
+  Uint8List bytes;
+  if (path.startsWith('package')) {
+    bytes = await Resource(path, loader: ResourceLoader.defaultLoader)
+        .readAsBytes();
+  } else {
+    bytes = File(path).readAsBytesSync();
+  }
   var gz = GZipDecoder().decodeBytes(bytes);
   var archive = TarDecoder().decodeBytes(gz);
   for (var file in archive) {
@@ -32,7 +40,7 @@ void extractTarGzip(String path, String des) {
         ..createSync(recursive: true)
         ..writeAsBytesSync(data);
     } else {
-      Directory(join(des, filename))..create(recursive: true);
+      await Directory(join(des, filename)).create(recursive: true);
     }
   }
 }
