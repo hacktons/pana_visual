@@ -4,13 +4,13 @@ version: 0.1.1+1
 homepage: https://github.com/hacktons/pana_visual
 
 environment:
-  sdk: '>=2.7.0 <3.0.0'
+  sdk: '>=2.1.0 <3.0.0'
 executables:
   panahtml: main
 
 dependencies:
   http_server: ^0.9.8+3
-  archive: ^2.0.13
+  archive: ^2.0.11
   path: ^1.6.4
 
 dev_dependencies:
