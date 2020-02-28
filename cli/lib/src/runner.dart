@@ -93,10 +93,10 @@ class ProjectRunner {
     if (_webServer) {
       await _genHtml(result);
     }
+    var scores = json['scores'];
+    var health = scores != null ? scores['health'] : 0;
+    var maintenance = scores != null ? scores['maintenance'] : 0;
     if (_strictMode) {
-      var scores = json['scores'];
-      var health = scores != null ? scores['health'] : 0;
-      var maintenance = scores != null ? scores['maintenance'] : 0;
       if (health < 100 || maintenance < 100) {
         print(result);
         return EvaluateResult(
@@ -106,7 +106,10 @@ class ProjectRunner {
       }
     }
 
-    return EvaluateResult(success: true, message: 'evaluate complete');
+    return EvaluateResult(
+      success: true,
+      message: 'health:$health, maintenance=$maintenance',
+    );
   }
 }
 

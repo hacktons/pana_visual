@@ -1,4 +1,4 @@
-## 0.1.1-beta
+## 0.1.2
 - Add options to control local server and strict mode;
 - Fix resource path;
 
