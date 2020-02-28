@@ -12,6 +12,9 @@ void serve(String root) async {
   };
 
   var server = await HttpServer.bind(InternetAddress.loopbackIPv4, 0);
+  server.listen((event) {
+    staticFiles.serveRequest(event);
+  });
   print('Pana report are served at http://127.0.0.1:${server.port}#/home');
-  await server.forEach(staticFiles.serveRequest);
+//  await server.forEach(staticFiles.serveRequest);
 }

@@ -1,3 +1,7 @@
+## 0.1.2
+- Add options to control local server and strict mode;
+- Fix resource path;
+
 ## 0.1.1+1
 - Fix doc
 
