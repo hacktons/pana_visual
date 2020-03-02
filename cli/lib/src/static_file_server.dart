@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http_server/http_server.dart';
 
 /// static file server
-void serve(String root) async {
+Future<String> serve(String root) async {
   var staticFiles = VirtualDirectory(root);
   staticFiles.allowDirectoryListing = true;
   staticFiles.directoryHandler = (dir, request) {
@@ -15,6 +15,7 @@ void serve(String root) async {
   server.listen((event) {
     staticFiles.serveRequest(event);
   });
-  print('Pana report are served at http://127.0.0.1:${server.port}#/home');
-//  await server.forEach(staticFiles.serveRequest);
+  var url = 'http://127.0.0.1:${server.port}#/home';
+  print('Pana report are served at $url');
+  return url;
 }

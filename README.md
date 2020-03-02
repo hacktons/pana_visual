@@ -14,7 +14,6 @@ Preview the health and quality of a Dart/Flutter package before publish.
 
 Install `pana_html` with pub.
 ```dart
-pub global activate pana
 pub global activate pana_html
 ``` 
 
