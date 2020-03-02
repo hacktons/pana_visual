@@ -1,3 +1,6 @@
+## 0.1.3
+- Add api for dart test;
+
 ## 0.1.2
 - Add options to control local server and strict mode;
 - Fix resource path;

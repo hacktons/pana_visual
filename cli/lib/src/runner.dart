@@ -35,6 +35,7 @@ class ProjectRunner {
         negatable: false,
         help: 'Print this usage information.');
 
+  /// Construct a runner according to the cli parameters
   ProjectRunner(this.args) {
     var argResults = _parser.parse(args);
     _webServer = argResults['web'];
@@ -90,8 +91,9 @@ class ProjectRunner {
     if (json != null) {
       print('analyze completed');
     }
+    var url = '';
     if (_webServer) {
-      await _genHtml(result);
+      url = await _genHtml(result);
     }
     var scores = json['scores'];
     var health = scores != null ? scores['health'] : 0;
@@ -102,6 +104,7 @@ class ProjectRunner {
         return EvaluateResult(
           success: false,
           message: 'health:$health, maintenance=$maintenance',
+          url: url,
         );
       }
     }
@@ -109,12 +112,13 @@ class ProjectRunner {
     return EvaluateResult(
       success: true,
       message: 'health:$health, maintenance=$maintenance',
+      url: url,
     );
   }
 }
 
 /// generate html report and deploy as local service
-Future<void> _genHtml(String result) async {
+Future<String> _genHtml(String result) async {
   var exist = await Directory('pana_visual').exists();
   if (!exist) {
     Directory('pana_visual').createSync();
@@ -123,6 +127,7 @@ Future<void> _genHtml(String result) async {
   // update data.json
   var dataFile = join('pana_visual', 'assets', 'assets', 'data.json');
   File(dataFile).writeAsStringSync(result);
-  await serve('pana_visual');
+  var url = await serve('pana_visual');
   print('Terminate as you like');
+  return url;
 }
