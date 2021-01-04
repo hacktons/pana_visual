@@ -21,8 +21,6 @@ workflows:
           source: true
     scripts:
       - flutter packages pub get
-      - find . -name "Podfile" -execdir pod install \;
-      - flutter build ios --release --no-codesign
       - |
         #!/usr/bin/env bash
         dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
