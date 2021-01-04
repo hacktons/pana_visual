@@ -20,9 +20,9 @@ workflows:
           include: true
           source: true
     scripts:
-      - cd . && flutter packages pub get
+      - flutter packages pub get
       - find . -name "Podfile" -execdir pod install \;
-      - cd . && flutter build ios --release --no-codesign
+      - flutter build ios --release --no-codesign
       - |
         #!/usr/bin/env bash
         dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
