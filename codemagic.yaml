@@ -30,7 +30,7 @@ workflows:
            tar -cvzf fair-2.10.4.tar.gz sdk
         fi
     artifacts:
-      - *.tar.gz
+      - fair-*.tar.gz
       - flutter_drive.log
     publishing:
       email:
