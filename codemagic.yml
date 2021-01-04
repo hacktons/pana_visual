@@ -1,0 +1,38 @@
+# Automatically generated on 2021-01-04 UTC from https://codemagic.io/app/5e4018f435303b17abf89edd/settings
+# Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
+
+workflows:
+  v1.22.5:
+    name: v1.22.5
+    max_build_duration: 60
+    environment:
+      flutter: 1.22.5
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths: []
+    triggering:
+      events:
+        - pull_request
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+    scripts:
+      - cd . && flutter packages pub get
+      - find . -name "Podfile" -execdir pod install \;
+      - cd . && flutter build ios --release --no-codesign
+      - |
+        #!/usr/bin/env bash
+        dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        if [ -d "sdk" ]; then
+           tar -cvzf fair-2.10.4.tar.gz sdk
+        fi
+    artifacts:
+      - *.tar.gz
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - iamavenwu@gmail.com
