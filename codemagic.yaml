@@ -23,8 +23,8 @@ workflows:
       - flutter packages pub get
       - |
         #!/usr/bin/env bash
-        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.10.4.tar.gz && cd ../
-		dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        cd tools && tar -xzvf fairc.dart.snapshot-2.10.4.tar.gz && cd ../
+        dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
         if [ -d "sdk" ]; then
            tar -cvzf fair-2.10.4.tar.gz sdk
         fi
@@ -56,8 +56,8 @@ workflows:
       - flutter packages pub get
       - |
         #!/usr/bin/env bash
-        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.9.2.tar.gz && cd ../
-    dart tools/fairc.dart.snapshot-2.9.2 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        cd tools && tar -xzvf fairc.dart.snapshot-2.9.2.tar.gz && cd ../
+        dart tools/fairc.dart.snapshot-2.9.2 --compile-kind=flutter --directory=/Users/builder/programs/flutter
         if [ -d "sdk" ]; then
            tar -cvzf fair-2.9.2.tar.gz sdk
         fi
@@ -89,8 +89,8 @@ workflows:
       - flutter packages pub get
       - |
         #!/usr/bin/env bash
-        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.8.4.tar.gz && cd ../
-    dart tools/fairc.dart.snapshot-2.8.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        cd tools && tar -xzvf fairc.dart.snapshot-2.8.4.tar.gz && cd ../
+        dart tools/fairc.dart.snapshot-2.8.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
         if [ -d "sdk" ]; then
            tar -cvzf fair-2.8.4.tar.gz sdk
         fi
@@ -122,8 +122,8 @@ workflows:
       - flutter packages pub get
       - |
         #!/usr/bin/env bash
-        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.7.2.tar.gz && cd ../
-    dart tools/fairc.dart.snapshot-2.7.2 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        cd tools && tar -xzvf fairc.dart.snapshot-2.7.2.tar.gz && cd ../
+        dart tools/fairc.dart.snapshot-2.7.2 --compile-kind=flutter --directory=/Users/builder/programs/flutter
         if [ -d "sdk" ]; then
            tar -cvzf fair-2.7.2.tar.gz sdk
         fi
