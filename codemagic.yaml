@@ -104,8 +104,8 @@ workflows:
       email:
         recipients:
           - chaobinwu89@gmail.com
-  1.12.13+hotfix.9:
-    name: 1.12.13+hotfix.9
+  v1.12.13+hotfix.9:
+    name: v1.12.13+hotfix.9
     max_build_duration: 60
     environment:
       flutter: 1.12.13+hotfix.9
