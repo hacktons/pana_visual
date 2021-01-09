@@ -23,7 +23,8 @@ workflows:
       - flutter packages pub get
       - |
         #!/usr/bin/env bash
-        dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.10.4.tar.gz && cd ../
+		dart tools/fairc.dart.snapshot-2.10.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
         if [ -d "sdk" ]; then
            tar -cvzf fair-2.10.4.tar.gz sdk
         fi
@@ -33,4 +34,103 @@ workflows:
     publishing:
       email:
         recipients:
-          - iamavenwu@gmail.com
+          - chaobinwu89@gmail.com
+  v1.20.4:
+    name: v1.20.4
+    max_build_duration: 60
+    environment:
+      flutter: 1.20.4
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths: []
+    triggering:
+      events:
+        - pull_request
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+    scripts:
+      - flutter packages pub get
+      - |
+        #!/usr/bin/env bash
+        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.9.2.tar.gz && cd ../
+    dart tools/fairc.dart.snapshot-2.9.2 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        if [ -d "sdk" ]; then
+           tar -cvzf fair-2.9.2.tar.gz sdk
+        fi
+    artifacts:
+      - fair-*.tar.gz
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - chaobinwu89@gmail.com
+  v1.17.3:
+    name: v1.17.3
+    max_build_duration: 60
+    environment:
+      flutter: 1.17.3
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths: []
+    triggering:
+      events:
+        - pull_request
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+    scripts:
+      - flutter packages pub get
+      - |
+        #!/usr/bin/env bash
+        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.8.4.tar.gz && cd ../
+    dart tools/fairc.dart.snapshot-2.8.4 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        if [ -d "sdk" ]; then
+           tar -cvzf fair-2.8.4.tar.gz sdk
+        fi
+    artifacts:
+      - fair-*.tar.gz
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - chaobinwu89@gmail.com
+  1.12.13+hotfix.9:
+    name: 1.12.13+hotfix.9
+    max_build_duration: 60
+    environment:
+      flutter: 1.12.13+hotfix.9
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths: []
+    triggering:
+      events:
+        - pull_request
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+    scripts:
+      - flutter packages pub get
+      - |
+        #!/usr/bin/env bash
+        cd tools && tar -xzvf tools/fairc.dart.snapshot-2.7.2.tar.gz && cd ../
+    dart tools/fairc.dart.snapshot-2.7.2 --compile-kind=flutter --directory=/Users/builder/programs/flutter
+        if [ -d "sdk" ]; then
+           tar -cvzf fair-2.7.2.tar.gz sdk
+        fi
+    artifacts:
+      - fair-*.tar.gz
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - chaobinwu89@gmail.com
