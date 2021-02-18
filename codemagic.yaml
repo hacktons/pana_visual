@@ -2,6 +2,45 @@
 # Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
 
 workflows:
+  v1.22.6:
+    name: v1.22.6
+    max_build_duration: 60
+    environment:
+      flutter: 1.22.6
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths: []
+    triggering:
+      events:
+        - pull_request
+        - tag
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+    scripts:
+      - flutter packages pub get
+      - |
+        #!/usr/bin/env bash
+        build(){
+          version=$1
+          dartBin=$2
+          cd tools && tar -xzvf fairc.dart.snapshot-$version.tar.gz && cd ../
+          $dartBin --version
+          $dartBin tools/fairc.dart.snapshot-$version --compile-kind=flutter --directory=/Users/builder/programs/flutter
+          if [ -d "sdk" ]; then
+             tar -cvzf fair-$version.tar.gz sdk
+          fi
+        }
+        build "2.10.5" "dart"
+    artifacts:
+      - fair-*.tar.gz
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - chaobinwu89@gmail.com
   v1.22.5:
     name: v1.22.5
     max_build_duration: 60
@@ -72,7 +111,7 @@ workflows:
              tar -cvzf fair-$version.tar.gz sdk
           fi
         }
-        build "2.9.2" "tools/dart-2.9.2"
+        build "2.9.2" "dart"
     artifacts:
       - fair-*.tar.gz
       - flutter_drive.log
@@ -111,7 +150,7 @@ workflows:
              tar -cvzf fair-$version.tar.gz sdk
           fi
         }
-        build "2.8.4" "tools/dart-2.8.4"
+        build "2.8.4" "dart"
     artifacts:
       - fair-*.tar.gz
       - flutter_drive.log
@@ -150,7 +189,7 @@ workflows:
              tar -cvzf fair-$version.tar.gz sdk
           fi
         }
-        build "2.7.2" "tools/dart-2.7.2"
+        build "2.7.2" "dart"
     artifacts:
       - fair-*.tar.gz
       - flutter_drive.log
